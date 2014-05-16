@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="jumbotron">
+        <h1>Accounts</h1>
+        <p>
+            To interact with your cloud storage accounts, start by texting <strong>ls</strong>
+            to <strong>{{app_number}}</strong>.
+        </p>
+        <p>
+            {% if accounts %}
+            You have connected the following accounts:
+            <ul id="accounts">
+            {% for account in accounts %}
+                <li>{{ account.service }}: {{account.account}}</li>
+            {% endfor %}
+            </ul>
+            {% else %}
+            Please connect some accounts!
+            {% endif %}
+        </p>
+        <p>
+            Actions:
+            <ul id="actions">
+                <li><a href="https://api.kloudless.com/services/?app_id={{app_id}}&callback={{callback_url}}"> Connect an account!  </a></li>
+                <li><a href="{{url_for('delete', _scheme='https', _external=True)}}">Delete all accounts</a></li>
+            </ul>
+        </p>
+    </div>
+{% endblock %}

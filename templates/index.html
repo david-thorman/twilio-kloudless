@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="jumbotron">
+        <h1>Getting Started with Twilio+Kloudless</h1>
+        <p>
+            This appliction is meant as a way to interact with your cloud
+            storage services using SMS, it allows you to look through the
+            directory structure of your account and get shareable links to
+            your files.
+        </p>
+        <p>
+            Please enter your phone number to get some cloud storage accounts
+            connected! For more information please check out the project on
+            <a href="https://github.com/david-thorman/twilio-kloudless">github</a>.
+        </p>
+        <form method="post" action="">
+            Phone Number: <input type="text" name="phone"/><br />
+            <input type="submit" value="Login" />
+        </form>
+    </div>
+{% endblock %}

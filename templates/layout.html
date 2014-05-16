@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <title>Twilio+Kloudless</title>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=list-group>
+            {% for message in messages %}
+              <li class=list-group-item>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block footer %}
+        {% if session.get('authed', False) %}
+        <p>
+            <a href="{{url_for('logout')}}"> logout </a>
+        </p>
+        {% endif %}
+        {% endblock %}
+    </body>
+</html>

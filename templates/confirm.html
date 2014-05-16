@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="jumbotron">
+        <h1>Confirm Your Number</h1>
+        <p>
+        You should have been sent a cofirmation code to the phone number that
+        you provided. Please enter it below to confirm that you own the account.
+        </p>
+        <form method="post" action="">
+            Confirmation Code: <input type="text" name="code"/><br />
+            <input type="submit" value="Confirm" />
+        </form>
+    </div>
+{% endblock %}

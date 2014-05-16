@@ -1,0 +1,20 @@
+---
+# Substitute the actual values for your application to get it running
+SECRET_KEY: "Your Flask Secret Key "
+KLOUDLESS_API_KEY: "Your Kloudless API Key"
+KLOUDLESS_APP_ID: "Your Kloudless App ID"
+APP_NUMBER: "The Twilio Phone number of your app"
+# Whether or not your app is behind https (it should be)
+USE_HTTPS: True
+# Toggling debug mode
+DEBUG: False
+PORT: 15456
+
+# Your backing data store configuration
+REDIS_CONFIG:
+    host: localhost
+    port: 6379
+    db: 0
+TWILIO_CONFIG:
+    account: "Your twilio account id"
+    token: "Your twilio account secret token"
